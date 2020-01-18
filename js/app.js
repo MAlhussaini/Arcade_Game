@@ -7,12 +7,12 @@ var Enemy = function (row) {
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
     if (row === 0) {
-        randomRow = true;
+        this.randomRow = true;
         this.row = Math.ceil(Math.random() * 3);
     }
     else {
         this.row = row;
-        randomRow = false;
+        this.randomRow = false;
     }
     this.x = -202;
     this.y = -83 + 41.5 * 1 + (this.row * 83) + 15;
@@ -32,7 +32,7 @@ Enemy.prototype.update = function (dt) {
     if (this.x > ctx.canvas.width) {
         this.x = -505;
         this.speed = Math.ceil(Math.random() * 14);
-        if (randomRow) {
+        if (this.randomRow) {
             this.row = Math.ceil(Math.random() * 3);
             this.y = -83 + 41.5 * 1 + (this.row * 83) + 15;
             console.log("row# " + this.row)
@@ -118,6 +118,7 @@ let enemy3 = new Enemy(3);
 let enemy4 = new Enemy(0);
 let enemy5 = new Enemy(0);
 let allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
+// let allEnemies = [enemy3];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
