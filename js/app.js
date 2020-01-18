@@ -1,3 +1,11 @@
+function win() {
+    console.log("You won!")
+    debugger 
+}
+function lose() {
+    console.log("You lose!")
+    debugger    
+}
 // Enemies our player must avoid
 var Enemy = function (row) {
     // Variables applied to each of our instances go here,
@@ -44,6 +52,12 @@ Enemy.prototype.update = function (dt) {
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
+    if ((Math.abs(this.y - player.y) < 20) && (Math.abs(this.x - player.x) < 62)) {
+        console.log("This y is "+this.y+", player y is "+player.y)
+        console.log("This x is "+this.x+", player x is "+player.x)
+        lose();
+    }
+    // console.log("This y is "+this.y+", player y is "+player.y)
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
