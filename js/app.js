@@ -1,11 +1,25 @@
 // Enemies our player must avoid
-var Enemy = function () {
+var Enemy = function (row) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    if (row === 0) {
+        randomRow = true;
+        this.row = Math.ceil(Math.random() * 3);
+    }
+    else {
+        this.row = row;
+        randomRow = false;
+    }
+    this.x = -202;
+    this.y = -83 + 41.5 * 1 + (this.row * 83) + 15;
+    this.speed = Math.ceil(Math.random() * 14);
+    // this.speed = 0;
+    console.log("row# " + this.row)
+    console.log(this.speed);
 };
 
 // Update the enemy's position, required method for game
@@ -14,6 +28,18 @@ Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    this.x += 50.5 * this.speed * dt;
+    if (this.x > ctx.canvas.width) {
+        this.x = -505;
+        this.speed = Math.ceil(Math.random() * 14);
+        if (randomRow) {
+            this.row = Math.ceil(Math.random() * 3);
+            this.y = -83 + 41.5 * 1 + (this.row * 83) + 15;
+            console.log("row# " + this.row)
+            console.log(this.speed);
+        }
+    }
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -41,7 +67,6 @@ class Player {
     }
 
     render() {
-
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
@@ -79,8 +104,6 @@ class Player {
         }
         console.log(this.x)
         console.log(this.y)
-
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 }
 
@@ -88,8 +111,13 @@ class Player {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-let allEnemies = [];
 let player = new Player;
+let enemy1 = new Enemy(1);
+let enemy2 = new Enemy(2);
+let enemy3 = new Enemy(3);
+let enemy4 = new Enemy(0);
+let enemy5 = new Enemy(0);
+let allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -103,5 +131,3 @@ document.addEventListener('keyup', function (e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-// TODO: if sqrt(x^2 + y^2) < radius then: collusion.
