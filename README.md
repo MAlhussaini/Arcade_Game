@@ -1,20 +1,52 @@
-# Classic Arcade Game Clone Project
+# Arcade Game Project
 
 ## Table of Contents
 
+- [What is the Arcade Game](#What_is_the_Arcade_Game)
+- [Challenge](#Challenge)
+- [How to Play](#How_to_Play)
 - [Instructions](#instructions)
+- [How I built the Arcade Game](#How_I_built_the_Arcade_Game)
 - [Contributing](#contributing)
+
+## What is the Arcade Game
+
+This is a simple game built to test a users speed.
+![snippet](img/snippet.png)
+
+## Challenge
+
+Move the player to the river as fast as possible with the minimum effort.
+
+## How to Play
+
+Click the link below and load the game:
+https://malhussaini.github.io/Arcade_Game/
 
 ## Instructions
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+- Use keyboard arrows to move.
+- On your first move timer will start.
+- Avoid hitting the bugs.
+- Reach the river as fast as you can.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+## How I built the Arcade Game
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
+I manipulated the DOM with Vanilla JS, and also have altered part of the HTML and the style of the game. Game engin was provided to me.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+- created the player class.
+- Created multiple enemies to make the game more fun
+- created a counter to count the number of moves made by player and timer to know the duration of a play.
+- create a pop-up when player wins/lose the game.
+
+#### Dependency
+
+    Non
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+The majority of the project is taking from the udacity team repository.
+
+This repository is encouraging and welcomes to _all_ contribution. If any, please make your pull request with clear name.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).

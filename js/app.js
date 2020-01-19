@@ -96,8 +96,6 @@ Enemy.prototype.update = function (dt) {
 Enemy.prototype.render = function () {
     // End the game if the player touches the enemy
     if ((Math.abs(this.y - player.y) < 20) && (Math.abs(this.x - player.x) < 62)) {
-        console.log("This y is " + this.y + ", player y is " + player.y)
-        console.log("This x is " + this.x + ", player x is " + player.x)
         gameOverPopup();
     }
     // Redraw the enemy position
