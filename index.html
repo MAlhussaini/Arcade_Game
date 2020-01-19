@@ -2,10 +2,30 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
+    <title>Arcade Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="overlay">
+        <div class="popup">
+            <div id="text-box">
+                <h6>Game Over!</h6>
+                <div class="division right">
+                    <h6>Time played</h6>
+                    <h6 id="play-time">00</h6>    
+                </div>
+                <div class="division left">
+                    <h6>Moves</h6>
+                    <h6 id="moves">0</h6>    
+                </div>
+            </div>
+            
+            <button type="reset" class="restart" id="restart" onclick="restartGame()">
+                Replay
+            </button>
+        </div>
+    </div>
+    
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>

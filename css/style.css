@@ -1,3 +1,85 @@
 body {
     text-align: center;
 }
+
+/*
+* The idea taken from 
+* https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript#toc-5-the-timer
+* Congratulations Popup
+*/
+
+ h6 {
+    margin:0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+ }
+
+#text-box {
+    display: block;
+    text-align: center;
+}
+
+ .overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.unhide {
+    visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 20% auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 80%;
+	position: relative;
+	/* transition: all 5s ease-in-out; */
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+#restart {
+	background-color: #141214;
+	padding: 0.7rem 1rem;
+	font-size: 1.2rem;
+	display: block;
+	margin: auto;
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #ffffff;
+	border-radius: 10px;
+}
+
+#starRating {
+    display: block;
+    text-align: center;
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: 0;
+ 
+}
+
+#starRating li {
+    display: inline-block;
+}
+
+.division {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    flex-wrap: nowrap;
+}
