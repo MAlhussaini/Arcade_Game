@@ -12,7 +12,7 @@
 ## What is the Arcade Game
 
 This is a simple game built to test a users speed.
-![snippet](img/snippet.png)
+![snippet](images/snippet.png)
 
 ## Challenge
 
